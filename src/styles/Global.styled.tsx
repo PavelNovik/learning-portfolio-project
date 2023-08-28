@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${Theme.colors.font};
   }
 
   ul {
@@ -32,18 +33,38 @@ export const GlobalStyle = createGlobalStyle`
   button {
     background-color: unset;
     border: none;
+    color: ${Theme.colors.font};
+    //width: 170px;
+    //height: 32px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   section {
     padding: 100px 0;
   }
-  
+
   section:nth-of-type(odd) {
     background-color: ${Theme.colors.primaryBg};
   }
 
   section:nth-of-type(even) {
     background-color: ${Theme.colors.secondaryBg};
+  }
+
+  h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+
   }
 
 `
