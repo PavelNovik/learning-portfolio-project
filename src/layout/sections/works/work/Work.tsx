@@ -28,9 +28,10 @@ export const Work = (props: WorkPropsType) => {
 };
 
 const StyledWork = styled.div`
-  max-width: 540px;
-  width: 100%;
+  //width: 100%;
+  width: 330px;
   background-color: ${Theme.colors.secondaryBg};
+  flex-grow: 1;
 
   ${Link} {
     padding: 10px 0;
@@ -44,6 +45,10 @@ const StyledWork = styled.div`
     }
   }
 
+  @media ${Theme.media.desktop} {
+    max-width: 540px;
+  }
+
 `
 const Description = styled.div`
   padding: 25px 20px;
@@ -51,18 +56,22 @@ const Description = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+  }
 
   &:hover {
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-
-      background: rgba(0, 0, 0, 0.30);
-      backdrop-filter: blur(4px);
+      opacity: 1;
     }
 
     ${Button} {
@@ -76,10 +85,19 @@ const ImageWrapper = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
+
     &::before {
       width: 100%;
       height: 100%;
+    }
+  }
+  
+  @media ${Theme.media.tablet} {
+    &::before {
+      opacity: 1;
+    }
+    ${Button} {
+      opacity: 1;
     }
   }
 `
