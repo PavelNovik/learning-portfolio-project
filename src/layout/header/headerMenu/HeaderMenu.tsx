@@ -7,12 +7,13 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
         <StyledHeaderMenu>
             <ul>
                 {props.menuItems.map((item, index) => {
-                    return <ListItem key={index}><Link href="#">
-                        {item}
-                        <Mask><span>{item}</span></Mask>
-                        <Mask><span>{item}</span></Mask>
-
-                    </Link></ListItem>
+                    return <ListItem key={index}>
+                        <Link href="#">
+                            {item}
+                            <Mask><span>{item}</span></Mask>
+                            <Mask><span>{item}</span></Mask>
+                        </Link>
+                    </ListItem>
                 })}
             </ul>
         </StyledHeaderMenu>
@@ -26,9 +27,12 @@ const StyledHeaderMenu = styled.nav`
     list-style: none;
     gap: 30px;
     justify-content: center;
-
-
   }
+  
+  @media ${Theme.media.tablet} {
+    display: none;
+  }
+  
 `
 
 const Link = styled.a`
@@ -50,9 +54,10 @@ const Mask = styled.span`
   overflow: hidden;
   //outline: 1px solid red;
   color: ${Theme.colors.accent};
-  
+
   & + & {
     top: 50%;
+
     span {
       display: inline-block;
       transform: translateY(-50%);
@@ -62,6 +67,7 @@ const Mask = styled.span`
 
 const ListItem = styled.li`
   position: relative;
+
   &::before {
     content: '';
     display: inline-block;
@@ -72,7 +78,7 @@ const ListItem = styled.li`
     left: -10px;
     right: -10px;
     z-index: 1;
-    
+
     transform: scale(0);
   }
 
@@ -80,13 +86,14 @@ const ListItem = styled.li`
     &::before {
       transform: scale(1);
     }
-    
+
     ${Mask} {
       transform: skewX(12deg) translateX(3px);
       color: ${Theme.colors.font};
+
       & + ${Mask} {
         transform: skewX(12deg) translateX(-3px);
       }
-    }    
+    }
   }
 `

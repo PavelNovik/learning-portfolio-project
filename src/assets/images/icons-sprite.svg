@@ -95,4 +95,9 @@
             </clipPath>
         </defs>
     </g>
+
+<!--    burger menu-->
+    <g id="burger">
+        <path d="M13.32 20H36V17.7778H13.32V20ZM0 11.1111H18H36V8.88889H0V11.1111ZM0 2.22222H36V0H0V2.22222Z" fill="white"/>
+    </g>
 </svg>
