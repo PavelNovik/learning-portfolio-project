@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Icon} from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Theme} from "../../styles/Theme";
+import {font} from "../../styles/Common";
 
 const socialList = ["instagram", "telegram", "vk", "linkedIn"]
 
@@ -34,10 +35,19 @@ const StyledFooter = styled.footer`
 `
 
 const Name = styled.span`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 22px;
-  font-weight: 700;
+  ${font({
+    family: '"Josefin Sans", sans-serif',
+    weight: 700,
+    Fmax: 22,
+    Fmin: 16
+  })} //font-family: "Josefin Sans", sans-serif;
+          //font-size: 22px;
+          //font-weight: 700;
   letter-spacing: 3px;
+
+    // @media ${Theme.media.mobile} {
+  //   font-size: 16px;
+  // }
 `
 
 const SocialIconsList = styled.ul`
@@ -57,9 +67,9 @@ const SocialIconLink = styled.a`
   height: 35px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.10);
-  
+
   color: ${Theme.colors.accent};
-  
+
   &:hover {
     color: ${Theme.colors.primaryBg};
     background-color: ${Theme.colors.accent};
