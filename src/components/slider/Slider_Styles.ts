@@ -7,7 +7,11 @@ const Slider = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: grab;
 //border: 1px solid white;
+  &:active {
+    cursor: grabbing;
+  }
 
 `
 

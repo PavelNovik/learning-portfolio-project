@@ -10,7 +10,7 @@ import {S} from "./Main_Styles";
 
 export const Main: React.FC = () => {
     return (
-        <S.Main>
+        <S.Main id={"home"}>
             <Container>
                 <FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"}>
                     <div>
@@ -24,7 +24,7 @@ export const Main: React.FC = () => {
                                     strings: "A Web Developer.",
                                     autoStart: true,
                                     loop: true,
-                                    delay: 250,
+                                    delay: 100,
                                 }}
                             />
                         </S.MainTitle>
