@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "../../../../components/Link";
-import {S} from "./../Works_Styles";
+import {S} from "../Works_Styles";
 
 export type TabsStatusType = "all" | "landing" | "react" | "spa"
 
