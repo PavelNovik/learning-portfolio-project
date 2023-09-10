@@ -11,6 +11,10 @@ export const Theme = {
         placeholderColor: "#495057",
 
     },
+    animations: {
+        transition: ".2s ease-in-out",
+        transitionMenu: ".4s ease-in-out",
+    },
 
     media: {
         desktop: "screen and (min-width: 1140px)",

@@ -43,6 +43,7 @@ const SocialIconLink = styled.a`
   background: rgba(255, 255, 255, 0.10);
 
   color: ${Theme.colors.accent};
+  transition: ${Theme.animations.transition};
 
   &:hover {
     color: ${Theme.colors.primaryBg};

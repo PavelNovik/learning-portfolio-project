@@ -21,6 +21,8 @@ export const Link = styled.a<{active?: boolean}>`
     display: inline-block;
     //height: 10px;
     background-color: ${Theme.colors.accent};
+    height: 0;
+    transition: ${Theme.animations.transition};
 
     position: absolute;
     bottom: 5px;

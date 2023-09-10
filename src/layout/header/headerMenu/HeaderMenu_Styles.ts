@@ -11,6 +11,7 @@ const Mask = styled.span`
   overflow: hidden;
   //outline: 1px solid red;
   color: ${Theme.colors.accent};
+  transition: ${Theme.animations.transition};
 
   & + & {
     top: 50%;
@@ -34,7 +35,7 @@ const NavLink = styled(Link)`
   font-size: 30px;
   font-weight: 400;
   color: transparent;
-  
+
   //line-height: 55px;
   &::before {
     content: '';
@@ -48,7 +49,9 @@ const NavLink = styled(Link)`
     z-index: 1;
 
     transform: scale(0);
+    transition: ${Theme.animations.transition};
   }
+
   &:hover, &.active {
     &::before {
       transform: scale(1);
@@ -63,7 +66,7 @@ const NavLink = styled(Link)`
       }
     }
   }
-  
+
 `
 
 const DesktopMenu = styled.nav`
@@ -97,22 +100,31 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   bottom: 0;
   background-color: rgba(31, 31, 32, 0.90);
   z-index: 99999;
-  display: none;
+  //display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: ${Theme.animations.transitionMenu};
 
-  ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  `}
   ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
+    transition: 1s ease-in-out;
 
   }
+
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    transform: translateY(0);
+
+    & ul {
+      gap: 30px;
+    }
+
+  `}
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`

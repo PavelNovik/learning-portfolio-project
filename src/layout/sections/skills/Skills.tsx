@@ -1,10 +1,13 @@
 import React from 'react';
+import {Fade} from "react-awesome-reveal";
+
 import {FlexWrapper} from "../../../components/FlexWrapper";
 
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Skill} from "./skill/Skill";
 import {Container} from "../../../components/Container";
 import {S} from "./Skills_Styles"
+
 const skillData = [
     {
         iconId: "code",
@@ -44,11 +47,13 @@ export const Skills: React.FC = () => {
             <Container>
                 <SectionTitle>My Skills</SectionTitle>
                 <FlexWrapper wrap={"wrap"} justify={"space-between"} align={"center"}>
-                    {skillData.map((skill, index) => {
-                        return <Skill key={index} iconId={skill.iconId}
-                                      title={skill.title}
-                                      description={skill.description}/>
-                    })}
+                    <Fade cascade={true} damping={0.2}>
+                        {skillData.map((skill, index) => {
+                            return <Skill key={index} iconId={skill.iconId}
+                                          title={skill.title}
+                                          description={skill.description}/>
+                        })}
+                    </Fade>
                 </FlexWrapper>
             </Container>
 
