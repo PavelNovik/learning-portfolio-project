@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
 
 const Skills = styled.section`
+    position: relative;
 `
 
 const Skill = styled.div`
